@@ -1,0 +1,21 @@
+#Leetcode-3127 Make a Square with the same color
+#Time Complexity 0(1)
+
+class Solution {
+    public boolean canMakeSquare(char[][] grid) {
+        for(int i=0;i<2;i++){
+            for(int j=0;j<2;j++){
+                int black = 0;
+                if(grid[i][j]=='B') black++;
+                if(grid[i][j+1]=='B') black++;
+                if(grid[i+1][j]=='B') black++;
+                if(grid[i+1][j+1]=='B') black++;
+                if(black >=3 || black <= 1){
+                    return true;
+                }
+            }
+        }
+        return false;
+        
+    }
+}
